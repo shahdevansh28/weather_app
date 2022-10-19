@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Semester-5\\SDP\\weatherapp_starter_project\\weatherapp_starter_project\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-b+sr+Latn\\values-b+sr+Latn.xml",
+            "outputFile": "C:\\Users\\Dell\\Documents\\GitHub\\weather_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-b+sr+Latn\\values-b+sr+Latn.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Dell\\.gradle\\caches\\transforms-3\\3ff720be07735976176520d1c05fb799\\transformed\\jetified-play-services-base-18.0.1\\res\\values-b+sr+Latn\\values.xml",

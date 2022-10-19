@@ -28,7 +28,7 @@ class SetRiseTimeWidget extends StatelessWidget {
                 color: CustomColors.cardColor,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.asset("assets/icons/windspeed.png"),
+              child: Image.asset("assets/icons/sunrise.png"),
             ),
             Container(
               height: 100,
@@ -38,7 +38,7 @@ class SetRiseTimeWidget extends StatelessWidget {
                 color: CustomColors.cardColor,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.asset("assets/icons/clouds.png"),
+              child: Image.asset("assets/icons/sunset.png"),
             ),
           ],
         ),

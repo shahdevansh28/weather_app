@@ -16,6 +16,8 @@ class GlobalController extends GetxController {
   RxBool checkLoading() => _isLoading;
   RxDouble getLattitude() => _lattitude;
   RxDouble getLongitude() => _longitude;
+  final TextEditingController searchController =
+      Get.put(TextEditingController(), permanent: true);
 
   final weatherData = WeatherData().obs;
 
@@ -71,6 +73,7 @@ class GlobalController extends GetxController {
           .processData(value.latitude, value.longitude)
           .then((value) {
         weatherData.value = value;
+        print(value);
         print(value.getCurrentWind().wind.deg);
         _isLoading.value = false;
       });

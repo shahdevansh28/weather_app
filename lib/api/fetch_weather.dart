@@ -24,4 +24,16 @@ class FetchWeatherAPI {
     );
     return weatherData!;
   }
+
+  Future<WeatherData> processDataCity(city) async {
+    var response = await http.get(Uri.parse(apiURLCity(city)));
+    var jsonString = jsonDecode(response.body);
+    weatherData = WeatherData(
+      WeatherDataCurrent.fromJson(jsonString),
+      WeatherDataWind.fromJson(jsonString),
+      WeatherDataSys.fromJson(jsonString),
+      //WeatherDataweather.fromJson(jsonString),
+    );
+    return weatherData!;
+  }
 }

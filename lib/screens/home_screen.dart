@@ -1,5 +1,6 @@
+import 'dart:convert';
 import 'dart:math';
-
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:weatherapp_starter_project/controller/global_controller.dart';
 import 'package:get/get.dart';
@@ -9,6 +10,12 @@ import 'package:weatherapp_starter_project/widgets/comfort_lvl_widget.dart';
 import 'package:weatherapp_starter_project/widgets/current_weather_widget.dart';
 import 'package:weatherapp_starter_project/widgets/header_widget.dart';
 
+import '../api/fetch_weather.dart';
+import '../model/weather/sys.dart';
+import '../model/weather/wind.dart';
+import '../model/weather_data.dart';
+import '../model/weather_data_current.dart';
+import '../utils/api_url.dart';
 import '../widgets/rise_set_time_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,6 +26,20 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  TextEditingController searchController = new TextEditingController();
+  // Future<WeatherData> processDataByCity(search_city) async {
+  //   //print("Hello");
+  //   var response = await http.get(Uri.parse(apiURLCity(search_city)));
+  //   var jsonString = jsonDecode(response.body);
+  //   weatherData = WeatherData(
+  //     WeatherDataCurrent.fromJson(jsonString),
+  //     WeatherDataWind.fromJson(jsonString),
+  //     WeatherDataSys.fromJson(jsonString),
+  //   );
+  //   return weatherData!;
+  // }
+
+  WeatherData? weatherData;
   //call
   final GlobalController globalController =
       Get.put(GlobalController(), permanent: true);
@@ -60,7 +81,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                print("Search me");
+                                print(searchController.text);
+                                //   String search_city = searchController.text;
+                                //   return FetchWeatherAPI().processDataCity(search_city).then(){
+                                //     weatherData.value = value;
+                                //   }
+                                // },
                               },
                               child: Container(
                                 child: Icon(Icons.search),
@@ -69,6 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             Expanded(
                               child: TextField(
+                                controller: searchController,
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "Search for ${city}",
@@ -90,6 +117,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             globalController.getData().getCurrentWind(),
                         // weatherDataweather:
                         //     globalController.getData().getCurrentweather(),
+                      ),
+                      Container(
+                        height: 1,
+                        color: CustomColors.dividerLine,
+                      ),
+                      const SizedBox(
+                        height: 20,
                       ),
                       SetRiseTimeWidget(
                         weatherDataSys:

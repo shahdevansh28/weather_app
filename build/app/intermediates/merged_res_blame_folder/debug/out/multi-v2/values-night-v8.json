@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Semester-5\\SDP\\weatherapp_starter_project\\weatherapp_starter_project\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "C:\\Users\\Dell\\Documents\\GitHub\\weather_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "D:\\Semester-5\\SDP\\weatherapp_starter_project\\weatherapp_starter_project\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\Dell\\Documents\\GitHub\\weather_app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

@@ -33,6 +33,7 @@ class CurrentWeatherWidget extends StatelessWidget {
 
   Widget temperatureAreaWidget() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         Image.asset(
           "assets/weather/01d.png",
@@ -47,7 +48,7 @@ class CurrentWeatherWidget extends StatelessWidget {
         RichText(
           text: TextSpan(children: [
             TextSpan(
-                text: "${weatherDataCurrent.main.temp}°",
+                text: "${weatherDataCurrent.main.temp}°C",
                 style: const TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 68,
@@ -91,7 +92,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 color: CustomColors.cardColor,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.asset("assets/icons/clouds.png"),
+              child: Image.asset("assets/icons/thermometer-30.png"),
             ),
             Container(
               height: 60,
@@ -101,7 +102,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 color: CustomColors.cardColor,
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Image.asset("assets/icons/humidity.png"),
+              child: Image.asset("assets/icons/thermometer-40.png"),
             ),
           ],
         ),
@@ -113,7 +114,7 @@ class CurrentWeatherWidget extends StatelessWidget {
               width: 60,
               child: Text(
                 "${weatherDataWind.wind.speed}km/h",
-                style: const TextStyle(fontSize: 12),
+                style: const TextStyle(fontSize: 16),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -122,7 +123,7 @@ class CurrentWeatherWidget extends StatelessWidget {
               width: 60,
               child: Text(
                 "${weatherDataCurrent.main.tempMax!.toInt()}°C",
-                style: const TextStyle(fontSize: 12),
+                style: const TextStyle(fontSize: 16),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -131,7 +132,7 @@ class CurrentWeatherWidget extends StatelessWidget {
               width: 60,
               child: Text(
                 "${weatherDataCurrent.main.tempMin!.toInt()}°C",
-                style: const TextStyle(fontSize: 12),
+                style: const TextStyle(fontSize: 16),
                 textAlign: TextAlign.center,
               ),
             ),
